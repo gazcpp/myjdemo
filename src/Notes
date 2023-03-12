@@ -1,0 +1,41 @@
+3.1. Reference to a Static Method
+The reference to a static method holds the following syntax: ContainingClass::methodName.
+
+Let's try to count all empty strings in the List<String> with help of Stream API.
+
+1
+boolean isReal = list.stream().anyMatch(u -> User.isRealUser(u));
+Take a closer look at lambda expression in the anyMatch() method, it just makes a call to a static method isRealUser(User user) of the User class. So it can be substituted with a reference to a static method:
+
+1
+boolean isReal = list.stream().anyMatch(User::isRealUser);
+This type of code looks much more informative.
+
+3.2. Reference to an Instance Method
+The reference to an instance method holds the following syntax: containingInstance::methodName. Following code calls method isLegalName(String string) of type User which validates an input parameter:
+
+1
+2
+User user = new User();
+boolean isLegalName = list.stream().anyMatch(user::isLegalName);
+3.3. Reference to an Instance Method of an Object of a Particular Type
+This reference method takes the following syntax: ContainingType::methodName. An example::
+
+1
+long count = list.stream().filter(String::isEmpty).count();
+3.4. Reference to a Constructor
+A reference to a constructor takes the following syntax: ClassName::new. As constructor in Java is a special method, method reference could be applied to it too with the help of new as a method name.
+
+1
+Stream<User> stream = list.stream().map(User::new);
+4. Optional<T>
+Before Java 8 developers had to carefully validate values they referred to, because of a possibility of throwing the NullPointerException (NPE). All these checks demanded a pretty annoying and error-prone boilerplate code.
+
+Java 8 Optional<T> class can help to handle situations where there is a possibility of getting the NPE. It works as a container for the object of type T. It can return a value of this object if this value is not a null. When the value inside this container is null it allows doing some predefined actions instead of throwing NPE.
+
+4.1. Creation of the Optional<T>
+An instance of the Optional class can be created with the help of its static methods:
+
+1
+Optional<String> optional = Optional.empty();
+Returns an empty Optional.

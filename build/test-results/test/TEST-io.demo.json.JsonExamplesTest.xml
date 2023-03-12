@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.demo.json.JsonExamplesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-13T20:59:48" hostname="LAPTOP-R17RSL69" time="0.007">
+  <properties/>
+  <testcase name="convertJSONObjectToHTTPHeaderStringTest" classname="io.demo.json.JsonExamplesTest" time="0.007"/>
+  <system-out><![CDATA[httpstrPOST "http://www.example.com/" HTTP/1.1
+
+
+str: POST "http://www.example.com/" HTTP/1.1
+obj: {"Request-URI":"http://www.example.com/","Method":"POST","HTTP-Version":"HTTP/1.1"}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,5 @@
+0httpstrPOST "http://www.example.com/" HTTP/1.1
+
+
+.str: POST "http://www.example.com/" HTTP/1.1
+Zobj: {"Request-URI":"http://www.example.com/","Method":"POST","HTTP-Version":"HTTP/1.1"}
